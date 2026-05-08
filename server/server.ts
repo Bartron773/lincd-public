@@ -7,6 +7,7 @@ import feedPreviewRouter from "./routes/feedPreview.js";
 import chatRouter from "./routes/chat.js";
 import dailySnapshotRouter from "./routes/dailySnapshot.js";
 import projectsRouter from "./routes/projects.js";
+import agentsRouter from "./routes/agents.js";
 
 const app = express();
 const port = Number(process.env.PORT || 5174);
@@ -36,6 +37,7 @@ app.use("/api/feed-preview", feedPreviewRouter);
 app.use("/api/chat", chatRouter);
 app.use("/api/daily-snapshot", dailySnapshotRouter);
 app.use("/api/projects", projectsRouter);
+app.use("/api/agents", agentsRouter);
 
 // Start server
 app.listen(port, () => {
