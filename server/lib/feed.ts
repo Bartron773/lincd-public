@@ -99,7 +99,7 @@ export async function buildFeedPreview(source: string): Promise<FeedPreviewRespo
   const feed = await parser.parseURL(source);
 
   const items: FeedPreviewItem[] = (feed.items || []).slice(0, 6).map((item) => {
-    const raw = item as Record<string, unknown>;
+    const raw = item as unknown as Record<string, unknown>;
     const description =
       cleanText(
         typeof raw.contentSnippet === "string"
