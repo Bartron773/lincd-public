@@ -1,4 +1,46 @@
+# Linc(d) Public - Only public-safe files should be committed
+
+# --- Private configs (NEVER commit) ---
+config.private.js
+config.local.js
+.env
+.env.local
+.env.*.local
+*.private.*
+*private*
+
+# --- Node / Build ---
 node_modules/
-server/node_modules/
-server/dist/
-server/package-lock.json
+dist/
+build/
+.next/
+out/
+coverage/
+*.log
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Editors ---
+.vscode/
+.idea/
+
+# --- Linc(d) Private Specs - keep out of public ---
+src/
+LINC*
+Linc*
+lincd_*
+analysis.*
+analyze.py
+robotOS*
+*Conversation_Arc*
+*SYSTEM-*
+*Gemini*.pdf
+*Cognitive Opera*
+*LINKOS*
+
+# --- Allow only these ---
+!index.html
+!README.md
+!config.example.js
