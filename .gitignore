@@ -1,22 +1,66 @@
-# Dependencies and generated output
+# ------------------------------------------------------------
+# Linc(d) public repository safety rules
+#
+# ELI5: Git normally notices every file in this folder. This
+# list tells Git which files to pretend it cannot see. Keep
+# personal data, passwords, and generated files out of GitHub.
+# ------------------------------------------------------------
+
+# Dependencies and generated output (recreated by npm)
 node_modules/
 dist/
+build/
 coverage/
+*.tsbuildinfo
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Local environment and private configuration
+# Secrets and local configuration — never publish these
 .env
+.env.*
+!.env.example
 .env.local
 .env.*.local
 *.private.*
 config.private.js
 config.local.js
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
 
-# Operating system and editors
+# Personal Linc(d) data — the public app must never contain it
+data/
+uploads/
+imports/
+exports/
+backups/
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.local.json
+
+# Synced project/reference material stays outside the public app
+sources/
+
+# Operating-system and editor clutter
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Synced reference material is never part of the public app
-sources/
+# Local test output
+playwright-report/
+test-results/
+.cache/
+.vite/
