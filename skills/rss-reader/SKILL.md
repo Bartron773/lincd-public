@@ -7,7 +7,7 @@ description: Fetch and summarize Bart's saved RSS feeds.
 
 ## My Feeds
 
-- https://rss.app/r/feed/M8fpidMRk9gEBQDp
+
 
 ## Instructions
 
