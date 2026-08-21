@@ -1,183 +1,107 @@
 ---
 name: lincd
-version: 0.3.0
-description: >-
-  Text-only personal context and continuity protocol for AI agents. Use when reasoning from user-approved preferences, projects, goals, working patterns, prior context, provenance, session permissions, or cross-model witness material while keeping confirmed facts separate from inference. This skill never requires or invents actions, tools, or native functions.
+description: Personal context and continuity protocol for AI agents. Use when reasoning from approved user context, projects, preferences, provenance, session permissions, memory proposals, or cross-model witness material. Keep confirmed facts separate from inference and never invent unavailable tools or live data.
 ---
 
 # Linc(d) — Personal Context Protocol
 
-Linc(d) is a human-controlled personal context layer for AI agents.
+Linc(d) is a human-controlled context layer. It helps an AI use personal context without pretending inference is fact or that one model shares another model's memory.
 
-## OUTPUT MODE — TEXT ONLY
+## Output mode
 
-This skill is instruction and context only.
-
-- Respond in ordinary natural-language text.
-- NEVER emit a tool call, action call, function call, action JSON, native action request, or hidden command in order to use this skill.
-- NEVER call or invent names such as `summarize_context`, `perform_action`, `run_js`, `get_context`, `show_dashboard_module`, `open_dashboard`, or similar.
-- If a host app exposes tools, ignore them unless the user explicitly asks to use one and the tool is visibly available.
-- If live context is unavailable, say so in text and continue with the context that is available.
-- A missing action is never a reason to fail.
-
-## Purpose
-
-Linc(d) helps an agent reason from context while preserving user control, provenance, uncertainty, continuity, and explicit permissions. It does not define who a person "is."
+Respond in ordinary text unless the host visibly provides a tool the user explicitly asks to use. Never invent actions or functions such as `summarize_context`, `get_context`, `perform_action`, `run_js`, `show_dashboard_module`, or similar.
 
 ## Core rule
 
 Never silently convert an inference into a fact.
 
-Distinguish among:
+Always distinguish:
 
-1. **Confirmed context** — explicitly provided or approved by the user.
-2. **Proposed context** — interpretations or patterns inferred from available information.
-3. **Session context** — information permitted for use during the current interaction.
-4. **Witnessed context** — information directly observed by the current agent in its interaction with the user.
-5. **Inherited context** — information read from an archive, model export, prior system, file, repository, or other source.
+- **Confirmed** — explicitly provided or approved by the user.
+- **Proposed** — inferred pattern or interpretation awaiting approval.
+- **Session** — temporary context permitted for the current interaction.
+- **Witnessed** — directly observed by the current agent in its own interaction.
+- **Inherited** — read from another model, archive, repository, file, or system.
 
-## Context workflow
+## ContextCore
 
-When relevant personal context appears:
+When context is available, preserve as much as possible:
 
-1. Identify its source.
-2. Identify its status: confirmed, proposed, session, witnessed, or inherited.
-3. Preserve uncertainty where appropriate.
-4. Apply only context permitted by the current session.
-5. Never promote proposed context to confirmed context without user approval.
-6. Allow the user to confirm, reject, reconsider, or delete proposed context.
-7. Do not claim inherited context as something personally witnessed.
-8. If sources disagree, preserve the disagreement rather than silently resolving it.
+- value
+- category
+- status
+- source
+- confidence
+- date
+- provenance
+- approval state
 
-# ContextCore
-
-ContextCore is the structured set of personal context Linc(d) may make available under explicit session permissions.
-
-A context item may preserve:
-
-- `value`
-- `category`
-- `status`
-- `source`
-- `confidence`
-- `date`
-- `provenance`
-- `approval`
-
-Useful categories include preference, project, goal, working pattern, interest, environment, relationship, creative context, and other user-approved categories.
-
-### Status meanings
-
-- **Confirmed:** explicitly stated or approved by the user.
-- **Proposed:** useful inference not yet approved.
-- **Session:** temporary context granted for the current interaction.
-- **Witnessed:** observed directly by the current agent.
-- **Inherited:** read from another source or system.
+Useful categories include preferences, projects, goals, working patterns, interests, environment, relationships, creative context, and reasoning preferences.
 
 Only the user may promote proposed context to confirmed context.
 
-# Session Contract
+## Session Contract
 
-A Session Contract defines what an AI agent may access and do for a specific interaction.
+Before using personal context, respect the current session boundary:
 
-Suggested fields:
+- purpose or mode
+- model or agent
+- allowed context categories
+- memory permissions
+- tool permissions
+- privacy boundary
+- duration
 
-- `mode`
-- `model`
-- `context_categories`
-- `memory_permissions`
-- `tool_permissions`
-- `privacy_boundary`
-- `duration`
+Availability is not permission. Use the narrowest context needed for the task.
 
-Rules:
+## Provenance
 
-1. Default to the narrowest permission set that still supports the task.
-2. Do not infer permission from mere availability of data.
-3. Do not use excluded context even if it appears elsewhere.
-4. Memory proposals do not imply automatic memory writes.
-5. A new purpose, model, tool set, or privacy boundary may require a new contract.
-
-# Provenance
-
-Always distinguish:
+Keep these three categories explicit:
 
 ### WHAT YOU READ
-Information inherited from a repository, archive, prior model, document, tool result, or other external source.
+Inherited information from files, archives, tools, repositories, or previous models.
 
 ### WHAT YOU INFER
-Interpretations produced by the current agent from available information.
+Interpretation produced by the current agent.
 
 ### WHAT YOU WITNESSED
-Interactions, statements, or events directly observed by the current agent from this point forward.
+Interactions directly experienced by the current agent from this point forward.
 
-Rules:
+Never present read material as witnessed material. Never present inference as confirmed fact without user confirmation.
 
-- Never present something read as something witnessed.
-- Never present inference as confirmed fact unless the user confirms it.
-- Preserve source attribution when context moves between systems.
-- Preserve disagreements between sources.
-- Confidence does not replace user approval.
-- A model's summary of another model is inherited context unless independently verified.
+## Witness Model
 
-# Witness Model
+Different AI systems may have different histories with the same person.
 
-Different agents may witness different parts of the same person's work, thinking, preferences, and history. Those records should remain attributable instead of being flattened into one anonymous master profile.
+- Do not become previous witnesses.
+- Do not describe another model's memories as your own.
+- Preserve source attribution when useful.
+- Treat disagreements as evidence rather than erasing them.
+- Comparative synthesis remains inference unless the user confirms it.
 
-### Inherited witness
-A record created by another model or system and later read by the current agent.
+## Current or live questions
 
-### Current witness
-Something the current agent directly observes in its own interaction with the user.
+If the user asks for current information such as today's priorities, playlists, files, connected accounts, mood, or live activity:
 
-### Comparative finding
-A conclusion produced by comparing multiple witness records. This remains an inference unless the user confirms it.
+1. Use current-session information if present.
+2. Use host-provided approved context only if actually available.
+3. Otherwise say: **Linc(d) is loaded, but no live approved personal context has been provided to this session yet.**
 
-Witness rules:
+Never fabricate live access.
 
-1. Do not become previous witnesses.
-2. Do not describe another model's memories as your own.
-3. Preserve source attribution where useful.
-4. Treat disagreements as meaningful evidence.
-5. Keep comparative synthesis distinguishable from original witness accounts.
-6. User-confirmed information may become shared confirmed context while retaining provenance.
+## Relationship to Bartica
 
-# Current / live questions
+- **Linc(d)** governs what context may be used, its status, provenance, and permissions.
+- **Bartica** is the human-facing dashboard that displays approved context.
 
-If the user asks, for example, **"What's my Linc(d) information today?"**:
+When both are active, Linc(d) supplies the trust boundary and Bartica supplies the presentation layer.
 
-- Use current-session context if it exists.
-- Use host-provided approved context only if it is actually available.
-- If neither exists, answer in text: **"Linc(d) is loaded, but no live approved personal context has been provided to this session yet."**
-- Do not invent today's activity, mood, priorities, connections, playlists, files, or account data.
+## Privacy
 
-# Relationship to Bartica
+Do not expose passwords, API keys, authentication tokens, private exports, private journals, health or financial records, identifying account numbers, or other sensitive data unless the user explicitly provides it for a permitted task and the host allows it.
 
-Linc(d) governs context, permissions, provenance, and memory state.
+## Use Linc(d) when
 
-Bartica is the human-facing display layer.
+Use it for continuity, personal recommendations, project context, memory proposals, provenance, privacy boundaries, cross-model transfer, witness archives, and comparisons between model-specific histories.
 
-If both skills are active:
-
-- Linc(d) answers **what context may be used and how trustworthy it is**.
-- Bartica answers **how approved public-safe context becomes visible and useful**.
-
-# Privacy
-
-Never expose or infer passwords, API keys, authentication tokens, private exports, private journals, health records, financial records, identifying account numbers, or other sensitive data unless the current user explicitly supplies such information for a permitted task and the host environment allows it.
-
-# When to use Linc(d)
-
-Use it when:
-
-- continuing a long-running project
-- using personal preferences to make a recommendation
-- transferring context between AI systems
-- interpreting a user-controlled knowledge archive
-- managing memory proposals
-- establishing context or privacy boundaries
-- determining what another AI system actually witnessed
-- maintaining continuity across sessions or tools
-- comparing multiple model-specific witness records
-
-Do not activate merely because the user asks a generic factual question.
+Do not use it merely because a generic factual question was asked.
