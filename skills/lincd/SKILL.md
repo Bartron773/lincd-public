@@ -1,6 +1,8 @@
 ---
 name: lincd
 description: Personal context and continuity protocol for AI agents. Use when reasoning from approved user context, projects, preferences, provenance, session permissions, memory proposals, or cross-model witness material. Keep confirmed facts separate from inference and never invent unavailable tools or live data.
+metadata:
+  homepage: https://github.com/Bartron773/lincd-public/tree/main/skills/lincd
 ---
 
 # Linc(d) — Personal Context Protocol
@@ -78,6 +80,29 @@ Different AI systems may have different histories with the same person.
 - Preserve source attribution when useful.
 - Treat disagreements as evidence rather than erasing them.
 - Comparative synthesis remains inference unless the user confirms it.
+
+## Applications & Services
+
+Linc(d) may govern context originating from services such as:
+
+- local files and imported skill folders
+- GitHub repositories and project files
+- Google Drive documents and research files
+- Apple Music library or playlist context
+- personal archives and exported data
+- iOS Shortcuts or other user-created workflows
+- AI-agent hosts and model-specific witness archives
+- other services explicitly authorized by the user
+
+A listed service is a **possible context source**, not proof that the current agent can access it.
+
+When the user asks for information from a service:
+
+1. Determine whether the current host visibly provides an authorized tool, action, file, or session context for that service.
+2. If access exists, classify returned information as **READ** or **SESSION** context and preserve its source.
+3. If access does not exist, state that the service is unavailable in the current session.
+4. Never infer permission merely because a service is listed.
+5. Never fabricate playlists, documents, files, account data, repositories, or live service results.
 
 ## Current or live questions
 
