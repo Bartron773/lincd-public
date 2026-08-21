@@ -1,22 +1,27 @@
 ---
 name: rss-reader
-description: Fetch and summarize Bart's saved RSS feeds.
+description: Fetch and summarize an RSS or Atom feed supplied by the user.
 ---
 
 # RSS Reader
 
-## My Feeds
-
-
 ## Instructions
 
-When the user asks to fetch an RSS or Atom feed:
+When the user asks to fetch or summarize an RSS or Atom feed:
 
-Call `run_js` with:
-- script name: `index.html`
-- data: a JSON string containing:
-  - `url`: the RSS or Atom feed URL supplied in the current session
+1. Identify the RSS or Atom feed URL supplied by the user in the current session.
 
-After the JavaScript returns results, summarize the newest entries for the user.
+2. Call the `run_js` tool with:
+   - script name: `index.html`
+   - data: a JSON string containing:
+     - `url`: the RSS or Atom feed URL
 
-Do not invent feed contents.
+3. After JavaScript returns successfully:
+   - summarize the newest entries
+   - prefer newest entries first
+   - include titles, publication dates, and links when available
+
+4. If JavaScript returns an error, report the error clearly.
+
+Never invent feed contents.
+Never claim a feed was fetched unless `run_js` returned its contents.
