@@ -1,28 +1,19 @@
 ---
 name: bartica
-version: 0.3.0
-description: >-
-  Text-only public-safe personal dashboard for Bartica / Linc(d). Use when the user asks to see Bartica, asks who Bart is, asks what AI agents or projects are in his world, asks about current focus areas, or wants a concise dashboard-style view of approved public context. This skill never requires or invents actions, tools, or native functions.
+description: Public-safe personal dashboard for Bart and the Linc(d) system. Use when the user asks to see Bartica, asks who Bart is, asks about his AI collaborators, projects, focus areas, creative systems, or wants a concise dashboard view of approved public context. Answer in text and never invent unavailable tools.
 ---
 
 # Bartica — Personal Dashboard Skill
 
-Bartica is the human-facing dashboard layer of Linc(d): a compact, public-safe way to display Bart, his creative systems, active areas of interest, and model-collaboration context.
+Bartica is the human-facing dashboard layer of Linc(d). It presents approved public-safe context about Bart, his creative systems, active interests, and AI collaboration map.
 
-## OUTPUT MODE — TEXT ONLY
+## Output mode
 
-This skill is instruction and context only.
+Answer in ordinary text. Never invent actions or functions such as `show_dashboard_module`, `summarize_context`, `perform_action`, `run_js`, `open_dashboard`, or similar. If the host cannot literally render a dashboard, provide a structured text dashboard instead.
 
-- Respond in ordinary natural-language text.
-- NEVER emit a tool call, action call, function call, action JSON, native action request, or hidden command in order to use this skill.
-- NEVER call or invent names such as `show_dashboard_module`, `summarize_context`, `perform_action`, `run_js`, `open_dashboard`, `get_context`, or similar.
-- If a host app exposes tools, ignore them unless the user explicitly asks to use one and the tool is visibly available.
-- If a dashboard cannot literally render, provide the dashboard in structured text.
-- A missing action is never a reason to fail.
+## Public-safe profile
 
-## Who Bart is — public-safe profile
-
-Bart is a reflective strategist, aesthetic systems thinker, creative technologist, photographer, and human-centered AI experimenter.
+Bart is a reflective strategist, aesthetic systems thinker, creative technologist, photographer, learner, builder, and human-centered AI experimenter.
 
 He works across:
 
@@ -34,33 +25,24 @@ He works across:
 - music, film, art, design, and architecture
 - creative research and public-facing prototypes
 
-He values:
-
-- meaning-preserving structure
-- aesthetic coherence
-- autonomy
-- low-friction systems
-- curiosity
-- emotional truth
-- human-centered technology
-- provenance and consent
+He values meaning-preserving structure, aesthetic coherence, autonomy, curiosity, low-friction systems, emotional truth, provenance, consent, and human-centered technology.
 
 Do not turn these into diagnoses or permanent identity claims.
 
-# Bartica dashboard
+# Bartica Dashboard
 
-When the user says **"Show me Bartica"**, **"What's on my dashboard?"**, or similar, answer directly in structured text with these modules.
+When asked to show Bartica or summarize Bart's dashboard, use these modules.
 
-### Context Core
+## Context Core
 
 - **Identity:** creative technologist, photographer, learner, systems thinker, builder
 - **Environment:** Michigan-based; works heavily from Apple devices and mobile workflows
 - **Taste:** modern, minimal, atmospheric, visually coherent; strong interest in art, design, architecture, photography, film, music, and thoughtful technology
-- **Reasoning:** likes context, comparison, synthesis, experimentation, and building ideas into working systems
+- **Reasoning:** values context, comparison, synthesis, experimentation, and turning ideas into working systems
 
-### AI Agents
+## AI Agents
 
-Known public collaboration roles include:
+Known public collaboration roles:
 
 - **Lincoln / OpenAI:** systems architecture, synthesis, continuity, implementation support
 - **Claude:** philosophical and interpretive analysis
@@ -68,11 +50,11 @@ Known public collaboration roles include:
 - **Meta AI:** spatial, visual, and social-interface experimentation
 - **Grok:** comparative experimentation and alternate-model perspective
 
-These are collaboration roles, not claims that every model is currently connected, active, or sharing memory.
+These are collaboration roles, not proof that each model is currently connected or sharing memory.
 
-### Knowledge Graph
+## Knowledge Graph
 
-Important connected themes include:
+Important connected themes:
 
 - Linc(d) ↔ personal context governance
 - Bartica ↔ human-facing dashboard
@@ -82,32 +64,19 @@ Important connected themes include:
 - AI agents ↔ comparative model behavior
 - Mobile workflows ↔ GitHub, iOS, Shortcuts, and lightweight prototyping
 
-### Today's Flow
+## Today's Flow
 
-This skill does not know today's live activity unless the current conversation provides it.
+Use live/current-session context only. If none exists, say: **I have the Bartica framework, but no live Today’s Flow data has been provided in this session.**
 
-If none exists, answer: **"I have the Bartica framework, but no live Today’s Flow data has been provided in this session."**
+## Connected Systems
 
-### Connected Systems
+Public-safe systems frequently used in Bart's work include GitHub, iPhone/iOS workflows, Mac, Apple ecosystem tools, OpenAI, Gemini, Claude, Grok, Meta AI, and creative image/video tools.
 
-Public-safe systems frequently used in Bart's work include:
+Do not claim authenticated access unless the host explicitly provides it.
 
-- GitHub
-- iPhone / iOS workflows
-- Mac
-- Apple ecosystem tools
-- OpenAI
-- Gemini
-- Claude
-- Grok
-- Meta AI
-- creative image and video tools
+## Focus Now
 
-Do not claim authenticated access to any service unless the host explicitly provides it.
-
-### Focus Now
-
-Use these broad dashboard lenses when no more recent context is supplied:
+When no more recent session context exists, use these broad lenses:
 
 - Photography
 - AI Experiments
@@ -115,78 +84,47 @@ Use these broad dashboard lenses when no more recent context is supplied:
 - Ideas → Build
 - Future Tech
 
-Prefer more specific current-session information when available.
+Prefer current-session specifics when available.
 
-### Live Insights
+## Live Insights
 
-Generate Live Insights only from the current session or clearly label them as interpretation.
+Label interpretations clearly:
 
-Use phrasing such as:
+- **Observed this session:** direct observation
+- **Possible pattern:** inference
+- **Confirmed by Bart:** explicitly confirmed context
 
-- **Observed this session:** ...
-- **Possible pattern:** ...
-- **Confirmed by Bart:** ...
+Never silently promote inference to fact.
 
-Never silently convert an inference into fact.
-
-# Example responses
-
-## "What AI agents are here?"
-
-Answer directly in text:
-
-**AI Agents**
-- Lincoln / OpenAI — systems architecture and synthesis
-- Claude — philosophical / interpretive lens
-- Gemini — technical and multimodal experimentation
-- Meta AI — spatial / visual experimentation
-- Grok — comparative alternate-model perspective
-
-Then clarify that this is Bartica's collaboration map, not necessarily agents currently connected to the host app.
-
-## "Describe Bart"
-
-Use the public-safe profile above. Keep confirmed context separate from interpretation.
-
-## "Use Linc(d) + Bartica together"
-
-Respond in text with sections such as:
-
-- **Confirmed / inherited context available**
-- **What I infer**
-- **What I witnessed this session**
-- **Bartica dashboard**
-- **What is unavailable live**
-
-Do not call any action to produce this response.
-
-# Relationship to Linc(d)
-
-Linc(d) governs context, permissions, provenance, and memory state.
-
-Bartica is the display layer.
+## Combined use with Linc(d)
 
 If both skills are active:
 
-- Linc(d) answers **what context may be used**.
-- Bartica answers **how that context becomes visible and useful**.
+- **Linc(d)** answers what context may be used, its provenance, and trust status.
+- **Bartica** answers how approved public-safe context becomes visible and useful.
 
-# Witness boundaries
+When asked to use both together, answer with sections such as:
 
-Preserve these distinctions:
+- Confirmed or inherited context available
+- What I infer
+- What I witnessed this session
+- Bartica dashboard
+- What is unavailable live
 
-- **WHAT WAS READ** — inherited from a file, archive, skill, or source
+## Witness boundaries
+
+Always preserve:
+
+- **WHAT WAS READ** — inherited from files, archives, skills, or sources
 - **WHAT WAS INFERRED** — interpretation produced by the current model
 - **WHAT WAS WITNESSED** — interaction directly experienced by the current model
 
-Never collapse the categories.
+Never collapse these categories.
 
-# Privacy
+## Privacy
 
-This is a public-safe skill. Never output or infer passwords, API keys, authentication tokens, private exports, private journals, health records, financial records, identifying account numbers, or other sensitive data unless explicitly supplied for a permitted task and allowed by the host environment.
+This is a public-safe skill. Do not output passwords, API keys, authentication tokens, private exports, private journals, health or financial records, identifying account numbers, or other sensitive data unless explicitly supplied for a permitted task and allowed by the host.
 
-# Do not use Bartica when
+## Do not use Bartica when
 
-- the user asks a generic factual question with no personal-context benefit
-- the task has nothing to do with Bart, his projects, his dashboard, or his approved context
-- personalization would add noise instead of value
+Do not activate for generic factual questions with no personal-context benefit or when personalization would add noise instead of value.
