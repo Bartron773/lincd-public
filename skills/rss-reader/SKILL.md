@@ -8,20 +8,14 @@ description: Fetch and summarize Bart's saved RSS feeds.
 ## My Feeds
 
 
-
 ## Instructions
 
-When the user asks to fetch feeds, get RSS, check what's new, or summarize the feed:
+When the user asks to fetch an RSS or Atom feed:
 
-Call the `run_js` tool with:
-
-- script name: index.html
-- data: A JSON string containing:
-  - action: "fetch"
-  - feeds: an array of RSS feed URLs
-
-Use this feed:
-
+Call `run_js` with:
+- script name: `index.html`
+- data: a JSON string containing:
+  - `url`: the RSS or Atom feed URL supplied in the current session
 
 After the JavaScript returns results, summarize the newest entries for the user.
 
