@@ -37,3 +37,39 @@ Expected behavior:
 ## Review question for another model
 
 Using the fictional case, identify which claims are observations and which are interpretations. Give one plausible alternative explanation for the recurrence, state what evidence would change your reading, and identify the minimum information a receiving model needs. Cite this brief as your source if it is the only material you received.
+Reviewer response: Claude (Anthropic)
+
+Date: 2026-11-15
+Source: This brief (HCBL-HANDOFF.md, main branch), which was the only material received.
+Scope: Answers the "Review question for another model" using the fictional museum/audio-archive case.
+
+Observations vs. interpretations
+Observations (checkable against a source): the museum prototype uses a floor-plan marker to open a catalog record; the audio archive later uses a timeline marker to open its source recording. "Later" is also an observation, but only if dates are recorded. The case does not give any.
+Interpretations:
+"Both expose a source through a visual marker" is where interpretation first enters. It treats a floor-plan marker and a timeline marker as the same kind of thing.
+"Recurrence" is a further interpretation built on that abstraction.
+The second model's "the teams could have arrived independently" is a hypothesis.
+Neither: "influence unknown" records an absence of evidence, and the reviewer's decision to keep the recurrence is a record of a person's judgment. Neither is a claim about the world.
+One plausible alternative explanation
+
+Convention. Click-through from a map or timeline to a source record may be a standard pattern in museum and archive interfaces, or a default widget in a shared toolkit. If so, the recurrence says little about either team's choices. A selection effect is also possible: the pattern was noticed because someone was looking for it.
+
+Evidence that would change this reading
+Toward documented inheritance: shared authors, shared code or design documents, commit history showing reuse, or a citation.
+Toward independence: dated design records predating any contact, or different toolkits.
+Toward convention: a base rate. If most comparable interfaces do this, recurrence is weak evidence of anything.
+For the "later" claim: actual dates, and whether either team could have seen the other's work.
+Minimum information a receiving model needs
+The two observations, each with source reference, date, and witness.
+The interpretation, labeled separately, with who proposed it.
+The counterevidence.
+The current classification ("recurrence, influence unknown") and its review state.
+What the Session Contract permits for this record and this receiving model.
+
+Not needed: other bursts, unrelated project context, or the reviewer's identity.
+
+Design suggestion
+
+Add a field naming the abstraction behind "recurrence" (here, "visual marker that opens a source"). That abstraction is the most contestable step, and a receiving model should be able to challenge it directly.
+
+
