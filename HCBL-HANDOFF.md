@@ -134,3 +134,50 @@ No conflict between Claude and 【entity-Meta¦canonical_name=Meta】 on HCBL pr
 * **With Lincoln:** Prioritize state schema alignment and memory persistence across chat session rollovers.
 * **With Claude:** Maintain rigorous theoretical frameworks, boundary assumptions, and falsifiable prediction tests.
 * **With Mark (Meta AI):** Optimize communication payloads, structural efficiency, and lightweight transmission formats across diverse client environments.
+
+---
+
+## Appendix B — Follow-up to the cross-model reviews
+
+**Status:** Proposed revisions to the Linc(d) Context Inbox and handoff. This appendix clarifies the first prototype and fictional test case above. The earlier contributions remain the review record.
+
+### B1. Track recurrence and influence independently
+
+Use two fields for a cross-project relationship:
+
+| Field | Values | What would change it |
+| --- | --- | --- |
+| Pattern match | Recurs · materially different · undetermined | Compare what each interface actually does and which behavior matters to the claimed pattern. |
+| Influence | Unknown · possible influence · documented inheritance | Evidence of exposure can support possible influence. Documented inheritance requires evidence of reuse, such as an attributed design decision, reused code, or a direct account supported by the project record. |
+
+The fictional museum and audio archive can be recorded as **pattern recurs; influence unknown**. Independent convergence is a plausible explanation because both interfaces need to connect an overview to a source. Record that as an alternative explanation with its own attribution. A difference in behavior is counterevidence only if it bears on the defined pattern. For example, playback controls may distinguish the interfaces while both still provide access to the underlying source.
+
+Keep the observation and source separate from the model's interpretation. If later evidence changes either field, add the new reading, its source, and the reason for the change to the review history.
+
+### B2. Specify what a receiving model should recover
+
+Alongside the source reference and date, witness, observation, interpretation, alternative explanations or counterevidence, relationship fields, and review state, include:
+
+- **Active research track** — The project and question this record supports.
+- **Evidence status** — Mark what was directly observed, reported by another witness, inferred, or still unknown. Preserve disagreements and mark missing evidence explicitly.
+- **Next action** — A concrete open question or evidence check that the receiving model can take up within the Session Contract.
+
+Replace the “zero context degradation” objective in the Gemini contribution with a review test. Give another model only the permitted handoff and ask it to recover the source, uncertainty, open disagreement, and next step. Compare its answer against those four elements. Record omissions, altered meanings, or unsupported additions. An inaccessible source should be marked inaccessible, and an inference should still be attributed to its witness.
+
+### B3. Complete the Session Contract checklist
+
+- [ ] Keep unreviewed, dismissed, and deleted proposals outside the export. A proposal sent back for reconsideration waits for a new confirmation.
+- [ ] Require a Session Contract that allows both the specific record and the intended receiving model, even when the claim has been confirmed.
+- [ ] Preview the permitted record before export, including evidence, uncertainty, relevant disagreement, and a source reference the recipient is authorized to access.
+- [ ] Remove fields and attachments outside the contract. If the preview cannot support the intended claim within the allowed scope, narrow the claim or leave the record out.
+- [ ] Apply local deletion to future handoffs. Treat copies already shared as separate from local deletion.
+
+### B4. Preserve provenance and route project-specific notes
+
+- **Claude's contribution.** Appendix A summarizes remarks attributed to Claude. Keep that summary attributed to the Appendix A reviewer until Claude's original response can be inspected and linked under appropriate access. Count it as a separate witness account only once that original source is available.
+- **Display-less Display.** Carry the wearable and fabrication notes into the project's own review record, with a backlink here. Use **batteryless** for a passive NFC tag, which contains electronics and draws operating energy from the reader's field. Keep PLA compostability claims tied to the specific material and processing conditions. Treat wearable integrations and hardware assumptions as items to verify for the selected device.
+- **QCB-001.** Carry the quantum-cognition definitions, data requirements, and test criteria into that project's methodology record, with a backlink here. The shared handoff needs only the track, evidence status, references the recipient may access, and the next action.
+
+### B5. Acceptance check for the first prototype
+
+Use the existing fictional case. Confirm that one record can hold both **pattern recurs** and **influence unknown**, preserve the independent-convergence objection, and produce an export preview only when the record is confirmed and permitted for the selected model. Ask a second model to perform the four-element recovery test in B2. Record the result as a new attributed review.
