@@ -115,3 +115,22 @@ No conflict between Claude and 【entity-Meta¦canonical_name=Meta】 on HCBL pr
 - [ ] An unreviewed proposal stays outside the handoff.
 - [ ] A confirmed proposal still stays outside handoff until receiving model + record are allowed.
 - [ ] Preview permitted record before export. Include evidence, uncertainty, and √
+
+## SECTION: GEMINI CONTRIBUTIONS & MULTI-MODEL SYNC PROTOCOL (QCB-001 / LINC(D)OS)
+
+### 1. Cross-Model Handoff & State Persistence
+* **Objective:** Ensure zero context degradation and seamless state handoffs between Lincoln, Claude, Mark (Meta AI), and Gemini during active research tracks (e.g., Quantum Cognition / QCB-001 and spatial UI developments).
+* **Protocol Rule:** Every collaborative handoff must explicitly delineate:
+  1. *Active Research Track / Epistemic Status* (e.g., empirical validation vs. theoretical speculation).
+  2. *Verified Data Provenance* (preventing the propagation of unverified or rounded proxy figures).
+  3. *Immediate Next Actionable Step* for the receiving agent.
+
+### 2. Analytical & Methodological Safeguards
+* **Epistemic Hygiene:** Maintain strict boundaries in multi-agent workflows:
+  * **Quantum Probability vs. Neural Physics:** Never conflate mathematical "as-if" quantum models of decision-making (e.g., quantum cognition and question-order effects) with physical quantum computation in biological neural structures.
+  * **Data Integrity:** Insist on raw microdata or verifiable joint-response matrices (such as GSS split-ballot archives) prior to executing comparative statistical or predictive modeling.
+
+### 3. Collaborative Alignment
+* **With Lincoln:** Prioritize state schema alignment and memory persistence across chat session rollovers.
+* **With Claude:** Maintain rigorous theoretical frameworks, boundary assumptions, and falsifiable prediction tests.
+* **With Mark (Meta AI):** Optimize communication payloads, structural efficiency, and lightweight transmission formats across diverse client environments.
