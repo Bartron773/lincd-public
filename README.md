@@ -105,6 +105,10 @@ Before committing anything:
 
 If a secret is accidentally committed, removing the file in a later commit is not enough—the secret may remain in Git history. Revoke or rotate it immediately.
 
+## HCBL and cross-model review
+
+The [HCBL handoff brief](./HCBL-HANDOFF.md) proposes how the Context Inbox could turn a creative observation into a reviewable context item. It includes a fictional case for comparing model interpretations and connects the proposal to WITNESS / MULTIPLE, robotOS, and Thinking Clearer with Lincoln.
+
 ## Next infrastructure milestone
 
 The intended next layer is a local service with SQLite, encryption for sensitive fields, a Context Inbox for source review, real provider authorization, and model adapters governed by Session Contracts.
